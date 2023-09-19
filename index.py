@@ -36,4 +36,8 @@ def calculator():
     else:
         print("Invalid choice!")
 
-calculator()
+while True:
+    calculator()
+    repeat = input("Do you want to calculate again? (y/n): ")
+    if repeat.lower() != "y":
+        break

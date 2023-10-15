@@ -1,14 +1,12 @@
 # Mendefinisikan class Bayes
 class Bayes:
-    # Mendefinisikan konstruktor
-    def __init__(self, pA, pB, pBA):
-        # Menginisialisasi atribut
+
+    def __init__(self, pA, pB, pBA, pBnA):
         self.pA = pA
         self.pB = pB
         self.pBA = pBA
+        self.pBnA = pBnA
 
-    # Mendefinisikan metode bayes
     def bayes(self):
-        # Menghitung dan mengembalikan peluang bersyarat
-        return self.pA * self.pBA / self.pB
+        return self.pA * self.pBA / (self.pA * self.pBA + (1 - self.pA) * self.pBnA)
 

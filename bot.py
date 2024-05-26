@@ -1,16 +1,31 @@
-import pyautogui
-import time
+# import pyautogui
+# import time
+#
+# def type_text_and_press_enter():
+#     # Arahkan kursor ke koordinat (-994, 977)
+#     # Loop untuk mengetik "halo" dan tekan enter sebanyak 40 kali
+#     while True:
+#         pyautogui.moveTo(57, 647, duration=1)
+#         pyautogui.click(57, 647)
+#         time.sleep(306)
+#
+# # Panggil fungsi untuk menjalankan proses
+# type_text_and_press_enter()
 
-def type_text_and_press_enter():
-    # Arahkan kursor ke koordinat (-994, 977)
-    # Loop untuk mengetik "halo" dan tekan enter sebanyak 40 kali
-    while True:
-        pyautogui.moveTo(57, 647, duration=1)
-        pyautogui.click(57, 647)
-        time.sleep(306)
+import os , random
 
-# Panggil fungsi untuk menjalankan proses
-type_text_and_press_enter()
+for i in range(20):
+    d = str(i) + 'days ago'
+    rand = random.randrange(1, 12)
+    with open('test.txt','a') as file:
+        file.write(d+'\n')
+    os.system('git add test.txt')
+    os.system('git commit --date=" 2022-'+str(rand)+'-'+d+'" -m 1')
+os.system('git push -u origin main')
+
+#git commit --amend --no-edit --date="Fri Nov 6 20:00:00 2015 -0600"
+#git fetch origin master
+#git rebase origin/master
 
 # def get_cursor_resolution():
 #     while True:
